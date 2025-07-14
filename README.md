@@ -52,7 +52,9 @@ MONGO_URI=mongodb+srv://<db_username>:<db_password>@<clusterName>.mongodb.net/?r
 
 Start the backend server:
 
+
 ```bash
+cd backend
 node server.js
 ```
 
