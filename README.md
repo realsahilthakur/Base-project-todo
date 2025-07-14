@@ -124,4 +124,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 🙌 Acknowledgements
 
-Built with ❤️ by [Sahil Thakur mostly😁 and morally supported by Sneha Kaimal😒]
+Built with ❤️ by ```Sahil Thakur``` mostly😁 and morally supported by ```Sneha Kaimal```😒
