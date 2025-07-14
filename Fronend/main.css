@@ -1,0 +1,463 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /* Colors */
+    --color-dark-blue: #3a65c7;
+    --color-medium-blue: #ffffff;
+    --color-light-blue-gray: #b9e2f5;
+    --color-very-light-blue-gray: #dcf0fa;
+    --color-pale-lavender: #edf7fc;
+
+    --first-color: var(--color-medium-blue); /* Main accent color */
+    --first-color-alt: var(--color-light-blue-gray); /* Lighter variant for hover */
+    --title-color: var(--color-very-light-blue-gray); /* Light text for titles */
+    --text-color: var(--color-light-blue-gray); /* Regular text color */
+    --text-color-light: var(--color-very-light-blue-gray); /* Lighter text */
+    --body-color: var(--color-dark-blue); /* Dark background */
+    --container-color: var(--color-pale-lavender); /* Light container background */
+
+    /* Font and typography */
+    --body-font: 'Poppins', sans-serif;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* z-index */
+    --z-fixed: 100;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-font);
+    min-height: 100vh;
+    padding-top: 3%;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: 0.4s; /* For theme transitions */
+}
+
+/* Body light or darker themes */
+.standard {
+    --title-border-color: rgba(0, 0, 0, 0.75);
+    background-image: linear-gradient(100deg, #f15b05, #126703);
+    color: #ffffff;
+    transition: 0.3s linear;
+}
+
+.light {
+    --title-border-color: rgba(26, 34, 39, 0.75);
+    background-image: linear-gradient(100deg, #1a2227, #ffffff);
+    color: #000000;
+    transition: 0.3s linear;
+}
+
+.darker {
+    --title-border-color: #01394c;
+    background-image: linear-gradient(100deg, #000000, #054256);
+    color: white;
+    transition: 0.3s linear;
+}
+
+#datetime-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: var(--z-fixed);
+}
+
+#datetime {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: #ffffff;
+    background-color: #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transition: color 0.4s;
+}
+
+#datetime:hover {
+    color: var(--first-color-alt);
+}
+
+#theme-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: var(--z-fixed);
+}
+
+.flexrow-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 0;
+}
+
+.theme-selector {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.theme-selector:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.standard-theme {
+    background-image: linear-gradient(45deg, #73c945, #9f5135);
+}
+
+.light-theme {
+    background-color: #b9e2f5;
+}
+
+.darker-theme {
+    background-color: #054256;
+}
+
+#header, #form {
+    margin: 0 1rem;
+    min-height: 10vh;
+    width: 100%;
+}
+
+#header {
+    margin-top: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 3rem;
+    min-height: 25vh;
+    width: 100%;
+}
+
+/* Animation */
+#title {
+    border-right: solid 2.5px var(--title-border-color, rgba(0, 0, 0, 0.75));
+    white-space: pre;
+    overflow: hidden;
+    letter-spacing: 0.20rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    max-width: 700px;
+}
+
+#title {
+    animation: animated-text 2s steps(18,end) 0.5s 1 normal both,
+        animated-cursor 750ms steps(18,end) infinite;
+}
+
+#title.darker-title {
+    animation: animated-text 2s steps(18,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(18,end) infinite;
+}
+
+/* Text animation */
+@keyframes animated-text {
+    from { width: 0%; }
+    to { width: 700px; }
+}
+
+/* Cursor animations */
+@keyframes animated-cursor {
+    from { border-right-color: rgba(0, 0, 0, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+@keyframes darker-animated-cursor {
+    from { border-right-color: #01394c; }
+    to { border-right-color: transparent; }
+}
+
+form {
+    display: flex;
+    font-size: 1.7rem;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+form input {
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    max-width: 500px;
+    transition: background-color 200ms ease-in-out;
+    width: 100%;
+}
+
+/* Input themes */
+form input.standard-input {
+    background-color: #181a1a;
+    color: rgb(247, 226, 223);
+}
+
+form input.light-input {
+    background-color: #AEB1B4;
+    color: #1a150e;
+}
+
+form input.light-input::placeholder {
+    color: #1a150e;
+    opacity: 0.7;
+}
+
+form input.darker-input {
+    background-color: #01394c;
+    color: white;
+}
+
+form input.darker-input::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+form input:hover {
+    cursor: text;
+}
+
+form input.standard-input:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+form input.light-input:hover {
+    background-color: #919699;
+}
+
+form input.darker-input:hover {
+    background-color: #013141;
+}
+
+button {
+    border: none;
+    outline: none;
+    transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Button themes */
+button.standard-button {
+    background-color: rgb(247, 226, 223);
+    color: rgb(0, 0, 0);
+}
+
+button.standard-button:hover {
+    background-color: white;
+    box-shadow: #fff8 0 0 10px;
+}
+
+button.light-button {
+    background-color: white;
+    color: #1a150e;
+}
+
+button.light-button:hover {
+    background-color: #f0f0f0;
+}
+
+button.darker-button {
+    background-color: #012b3b;
+    color: rgb(255, 255, 255);
+}
+
+button.darker-button:hover {
+    background-color: #b05959;
+}
+
+form button {
+    padding: 10px;
+    font-size: 17px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    min-width: 100px;
+}
+
+#myUnOrdList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.todo-list {
+    min-width: 25%;
+    overflow: hidden;
+    list-style: none;
+}
+
+.todo {
+    margin: 1rem;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    border-radius: 30px;
+    transition: background-color 200ms ease-in-out;
+}
+
+/* Items themes */
+.standard-todo {
+    background-color: rgb(26, 27, 27);
+}
+
+.light-todo {
+    background-color: #AEB1B4;
+}
+
+.darker-todo {
+    background-color: #01394c;
+}
+
+.todo li {
+    padding: 7px;
+    font-size: 20px;
+    flex: 1;
+    border-radius: 30px;
+    overflow-wrap: anywhere;
+}
+
+.check-btn, .delete-btn {
+    font-size: 19px;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+.completed {
+    transition: 0.2s;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transition: 0.5s;
+    transform: translateY(45rem) rotateZ(45deg);
+    opacity: 0;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1000px) {
+    #theme-container {
+        right: 5px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #header {
+        font-size: 2rem;
+    }
+
+    #title {
+        animation:
+            animated-text 1.5s steps(18,end) 1 normal both,
+            animated-cursor 750ms steps(18,end) infinite;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        max-width: 600px;
+    }
+
+    #datetime {
+        font-size: var(--small-font-size);
+        padding: 0.4rem 0.8rem;
+    }
+
+    #theme-container {
+        top: 5px;
+        right: 5px;
+    }
+
+    .theme-selector {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #header {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+
+    #title {
+        animation:
+            animated-text 1.5s steps(18,end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(18,end) infinite;
+        max-width: 255px;
+    }
+
+    #datetime-container {
+        top: 5px;
+        left: 5px;
+    }
+
+    #datetime {
+        font-size: var(--small-font-size);
+        padding: 0.3rem 0.6rem;
+    }
+
+    #theme-container {
+        top: 5px;
+        right: 5px;
+    }
+
+    .theme-selector {
+        height: 20px;
+        width: 20px;
+        margin: 0 3px;
+    }
+
+    form {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    form input {
+        border-radius: 17px;
+    }
+
+    form button {
+        border-radius: 15px;
+        margin-top: 15px;
+        width: 50%;
+    }
+
+    form button.light-button {
+        box-shadow: 0 0 5px lightgray;
+    }
+}
