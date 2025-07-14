@@ -37,7 +37,7 @@ git clone https://github.com/realsahilthakur/Base-project-todo.git
 ### 2. Backend Setup
 
 ```bash
-cd todo-backend
+cd backend
 npm install express mongoose cors dotenv
 ```
 
@@ -54,7 +54,6 @@ Start the backend server:
 
 
 ```bash
-cd backend
 node server.js
 ```
 
