@@ -63,7 +63,7 @@ node server.js
 ### 3. Frontend Setup
 
 ```bash
-cd todo-frontend
+cd frontend
 npm install -g serve
 serve -s . -p 5000
 ```
