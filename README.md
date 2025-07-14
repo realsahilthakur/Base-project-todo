@@ -31,8 +31,7 @@ The project is divided into two repositories:
 ### 1. Clone the Repositories
 
 ```bash
-git clone https://github.com/your-username/todo-frontend.git
-git clone https://github.com/your-username/todo-backend.git
+git clone https://github.com/realsahilthakur/Base-project-todo.git
 ```
 
 ### 2. Backend Setup
