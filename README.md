@@ -20,21 +20,6 @@ The project is divided into two repositories:
 - **`todo-backend`**: Contains the Node.js backend (e.g., `server.js`, `.env`, `.gitignore`)
 
 
-Directory structure:
-└── realsahilthakur-base-project-todo/
-    ├── README.md
-    ├── package.json
-    ├── Backend/
-    │   └── server.js
-    └── Fronend/
-        ├── index.html
-        ├── main.css
-        ├── main.js
-        ├── package.json
-        └── time.js
-
-
-
 ## ✅ Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16 or higher)
