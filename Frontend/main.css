@@ -162,12 +162,12 @@ body {
 }
 
 #title {
-    animation: animated-text 2s steps(18,end) 0.5s 1 normal both,
-        animated-cursor 750ms steps(18,end) infinite;
+    animation: animated-text 2s steps(15,end) 0.5s 1 normal both,
+        animated-cursor 750ms steps(15,end) infinite;
 }
 
 #title.darker-title {
-    animation: animated-text 2s steps(18,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(18,end) infinite;
+    animation: animated-text 2s steps(15,end) 0.5s 1 normal both, darker-animated-cursor 750ms steps(15,end) infinite;
 }
 
 /* Text animation */
@@ -385,8 +385,8 @@ form button {
 
     #title {
         animation:
-            animated-text 1.5s steps(18,end) 1 normal both,
-            animated-cursor 750ms steps(18,end) infinite;
+            animated-text 1.5s steps(15,end) 1 normal both,
+            animated-cursor 750ms steps(15,end) infinite;
         margin-bottom: 10px;
         margin-top: 30px;
         max-width: 600px;
@@ -416,8 +416,8 @@ form button {
 
     #title {
         animation:
-            animated-text 1.5s steps(18,end) 0.5s 1 normal both,
-            animated-cursor 750ms steps(18,end) infinite;
+            animated-text 1.5s steps(15,end) 0.5s 1 normal both,
+            animated-cursor 750ms steps(15,end) infinite;
         max-width: 255px;
     }
 
